@@ -1,0 +1,22 @@
+services:
+  postgres:
+    container_name: dbSimpleProject
+    image: postgres
+    volumes:
+      - dbSimpleProject:/var/lib/postgresql/data
+    ports:
+      - "5440:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: passwordroot
+      POSTGRES_DB: simpleproject
+
+  api:
+    container_name: apiSimpleProject
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+volumes:
+  dbSimpleProject:
