@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -32,6 +33,10 @@ public class Task {
     private LocalDateTime dateUpdated;
     @Column(name="datefinished")
     private LocalDateTime dateFinished;
+
+    @ManyToOne
+    @JoinColumn(name = "userid")
+    private User user;
 
 
     @PrePersist
