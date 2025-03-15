@@ -1,0 +1,15 @@
+@let tasksLocal = taskService.tasks();
+
+@if(taskService.loading()) {
+    <mat-spinner diameter="30" style="display: block; margin: auto;"></mat-spinner>
+} @else {
+    <mat-list>
+        @for(task of tasksLocal; track task.id) {
+            <mat-list-item>
+                <span matListItemTitle>{{task.title}}</span>
+                <span matListItemLine>{{task.description}}</span>
+            </mat-list-item>
+        }
+    </mat-list>
+}
+
