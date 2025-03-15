@@ -1,7 +1,8 @@
 package com.app.api.service.contract;
 
-import com.app.TaskDto;
+import com.app.api.domain.dto.TaskDto;
+import com.app.entities.Task;
 
 public interface ITaskService<T> extends CommonOperation<T> {
-    void createTask(TaskDto taskDto);
+    Task createTask(TaskDto taskDto);
 }

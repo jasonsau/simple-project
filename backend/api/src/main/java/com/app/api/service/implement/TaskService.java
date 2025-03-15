@@ -1,6 +1,6 @@
 package com.app.api.service.implement;
 
-import com.app.TaskDto;
+import com.app.api.domain.dto.TaskDto;
 import com.app.api.repository.TaskRepository;
 import com.app.api.service.contract.ITaskService;
 import com.app.entities.Task;
@@ -46,9 +46,10 @@ public class TaskService implements ITaskService<Task> {
         return repository.count();
     }
 
-    public void createTask(TaskDto taskDto) {
+    public Task createTask(TaskDto taskDto) {
         Task task = new Task();
         BeanUtils.copyProperties(taskDto, task);
         repository.save(task);
+        return task;
     }
 }
