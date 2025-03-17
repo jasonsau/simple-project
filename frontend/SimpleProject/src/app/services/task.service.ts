@@ -1,13 +1,15 @@
-import { HttpClient } from '@angular/common/http';
-import { computed, inject, Injectable, signal } from '@angular/core';
+import { isPlatformServer } from '@angular/common';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { computed, inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
 import {environment} from "@app/environments/environment"
 import { PageContent, Task } from '@models';
-import { delay, Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
+  platformId = inject(PLATFORM_ID);
   httpClient = inject(HttpClient);
   #tasks = signal({
     paginator: {},

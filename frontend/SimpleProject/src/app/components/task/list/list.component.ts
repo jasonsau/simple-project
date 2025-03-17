@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
-import {MatList, MatListItem, MatListItemLine, MatListItemTitle} from '@angular/material/list';
+import { MatButton } from '@angular/material/button';
+import { MatCard, MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { TaskService } from '@app/app/services/task.service';
 
 @Component({
   selector: 'app-list',
-  imports: [MatList, MatListItem, MatListItemLine, MatListItemTitle, MatProgressSpinnerModule],
+  imports: [MatProgressSpinnerModule, MatCard, MatCardModule, MatButton],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })
