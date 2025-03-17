@@ -1,7 +1,7 @@
 create table if not exists task(
     id              bigint          not null,
-    title           varchar(10)     not null,
-    description     varchar(50)     not null,
+    title           varchar(50)     not null,
+    description     varchar(250)     not null,
     completed       boolean         default false,
     datecreated     timestamp       default now(),
     dateupdated     timestamp,
