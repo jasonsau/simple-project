@@ -3,10 +3,12 @@ import { MatButton } from '@angular/material/button';
 import { MatCard, MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { TaskService } from '@app/app/services/task.service';
+import { TaskComponent } from "../task.component";
+import { AddTaskComponent } from '../add-task/add-task.component';
 
 @Component({
   selector: 'app-list',
-  imports: [MatProgressSpinnerModule, MatCard, MatCardModule, MatButton],
+  imports: [MatProgressSpinnerModule, MatCard, MatCardModule, MatButton, AddTaskComponent],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })

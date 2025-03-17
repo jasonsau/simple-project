@@ -1,4 +1,10 @@
 
-<button mat-fab aria-label="Add Task" (click)="openDialog()">
-    <mat-icon>add</mat-icon>
-</button>
+@if(task() === undefined) {
+    <button mat-fab aria-label="Add Task" (click)="openDialog()">
+        <mat-icon>add</mat-icon>
+    </button>
+} @else {
+    <button mat-mini-fab aria-label="Edit Task" (click)="openDialog()">
+        <mat-icon>edit</mat-icon>
+    </button>
+}

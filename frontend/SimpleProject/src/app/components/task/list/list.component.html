@@ -10,7 +10,7 @@
                     <div class="task-header">
                         <h3>{{task.title}}</h3>
                         <div>
-                            <button mat-button color="warn">Edit</button>
+                            <app-add-task [task]="task" ></app-add-task>
                             <button mat-button color="warn">Delete</button>
                         </div>
                     </div>

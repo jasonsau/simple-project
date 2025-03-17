@@ -35,4 +35,8 @@ export class TaskService {
   saveTask(task: Task): Observable<Task> {
     return this.httpClient.post<Task>(`${environment.urlApi}/tasks`, task)
   }
+
+  updateTask(task: Task): Observable<Task> {
+    return this.httpClient.put<Task>(`${environment.urlApi}/tasks/${task.id}`, task)
+  }
 }
