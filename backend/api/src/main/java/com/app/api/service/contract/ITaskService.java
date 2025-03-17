@@ -8,4 +8,5 @@ import com.app.entities.Task;
 public interface ITaskService extends CommonOperation<Task> {
     Task createTask(TaskDto taskDto);
     Task createTask(TaskDto taskDto, Authentication authentication);
+    Task updateTask(Task task, TaskDto taskDto);
 }

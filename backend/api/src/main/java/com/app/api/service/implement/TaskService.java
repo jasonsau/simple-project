@@ -69,4 +69,11 @@ public class TaskService implements ITaskService {
         repository.save(task);
         return task;
     }
+
+    public Task updateTask(Task task, TaskDto taskDto) {
+        task.setTitle(taskDto.getTitle());
+        task.setDescription(taskDto.getDescription());
+        repository.save(task);
+        return task;
+    }
 }

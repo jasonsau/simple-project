@@ -17,13 +17,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PathVariable;
+
 
 @RestController
 @RequestMapping("/tasks")
 @RequiredArgsConstructor
 public class TaskController extends Controller{
+
     private final ITaskService taskService;
     private final IUserService iUserService;
+
 
     @GetMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Page<Task>> getAllTasks(Authentication authentication) {
@@ -56,6 +62,19 @@ public class TaskController extends Controller{
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
             return ResponseEntity.badRequest().body("Task could not be deleted");
+        }
+    }
+
+    @PutMapping(path ="/{task}")
+    public ResponseEntity<?> updateTask(@PathVariable Task task, @Validated @RequestBody TaskDto taskDto, Authentication authentication) {
+        try {
+            Task updatedTask = taskService.updateTask(task, taskDto);
+            return ResponseEntity.ok(updatedTask);
+        } catch (Exception exception) {
+            System.out.println(exception.getMessage());
+            return ResponseEntity.badRequest().body(
+                message.error("Task could not created", "400")
+            );
         }
     }
 }
