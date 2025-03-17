@@ -5,8 +5,6 @@ import { MatDividerModule } from '@angular/material/divider';
 import {
   MAT_DIALOG_DATA,
   MatDialog,
-  MatDialogActions,
-  MatDialogClose,
   MatDialogContent,
   MatDialogModule,
   MatDialogRef,
@@ -14,7 +12,7 @@ import {
 } from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TaskService } from '@app/app/services/task.service';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MessageError, Task } from '@models';

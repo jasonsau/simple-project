@@ -48,7 +48,7 @@ export class LoginComponent {
           verticalPosition: 'top',
           horizontalPosition: 'center'
         });
-        return throwError(() => new Error("Error al guardar la tarea: " + error)); 
+        return throwError(() => new Error("Error : " + error)); 
       }))
     .subscribe((result) => {
       this.authService.saveToken(result.body.token, result.body.refreshToken);
