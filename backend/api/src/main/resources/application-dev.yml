@@ -11,3 +11,8 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: none
+
+jwt:
+  private.key: classpath:private.key
+  public.key: classpath:public.key
+  duration: 3600
