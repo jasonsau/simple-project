@@ -54,14 +54,15 @@ public class TaskController extends Controller{
     }
 
     @DeleteMapping(value = "/{task}", produces = MediaType.APPLICATION_JSON_VALUE)
-    @CrossOrigin("*")
     public ResponseEntity<?> deleteTask(@PathVariable Task task) {
         try {
             taskService.delete(task);
-            return ResponseEntity.ok("Task deleted successfully");
+            return ResponseEntity.ok(message.ok("Task deleted"));
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
-            return ResponseEntity.badRequest().body("Task could not be deleted");
+            return ResponseEntity.badRequest().body(
+                message.error("Task could not created", "400")
+            );
         }
     }
 
