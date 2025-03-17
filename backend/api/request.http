@@ -1,0 +1,49 @@
+GET http://localhost:8080/tasks
+Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqYXNvbi5ndWVycmEyNTNAZ21haWwuY29tIiwic2NvcGUiOiJVU0VSIiwiaXNzIjoiIiwiZXhwIjoxNzQyMTgxOTQ4LCJpYXQiOjE3NDIxNzgzNDgsInVzZXJuYW1lIjoiamFzb24uZ3VlcnJhMjUzQGdtYWlsLmNvbSJ9.LYYKXceMr6qZRiJE8FFKZDes72NkhmfX1zWMO6WmnMPdrTIvWdI89uw_hinvLZOP9C48YyHebqSY0EnFedTt84a-dPnuWz5Ye8Bdngs4tn5vT34VIZa3OVFgFAnv6DlAMiHVEBHP4tQrZMvyF8Gfs6l119-NOftHKCK1uDWTaTEHW86CGlX8X3N8Er5BF-ipBSyhuAWbVaFG8_zl59seRpxcEnU-DVEDe0lr2ZVQLmokoJDQS4pkRBNhTBl3HwmP-X4_UuVfgs2FuiQVTepU8tFqxB94Zl4RRPTQxD4qtDe4gNSqFXiPY4iHrGrUXw4nlzJxeyq1QW17skmP265pBQ
+
+###
+POST http://localhost:8080/tasks HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqYXNvbi5ndWVycmEyNTNAZ21haWwuY29tIiwic2NvcGUiOiJVU0VSIiwiaXNzIjoiIiwiZXhwIjoxNzQyMTgxOTQ4LCJpYXQiOjE3NDIxNzgzNDgsInVzZXJuYW1lIjoiamFzb24uZ3VlcnJhMjUzQGdtYWlsLmNvbSJ9.LYYKXceMr6qZRiJE8FFKZDes72NkhmfX1zWMO6WmnMPdrTIvWdI89uw_hinvLZOP9C48YyHebqSY0EnFedTt84a-dPnuWz5Ye8Bdngs4tn5vT34VIZa3OVFgFAnv6DlAMiHVEBHP4tQrZMvyF8Gfs6l119-NOftHKCK1uDWTaTEHW86CGlX8X3N8Er5BF-ipBSyhuAWbVaFG8_zl59seRpxcEnU-DVEDe0lr2ZVQLmokoJDQS4pkRBNhTBl3HwmP-X4_UuVfgs2FuiQVTepU8tFqxB94Zl4RRPTQxD4qtDe4gNSqFXiPY4iHrGrUXw4nlzJxeyq1QW17skmP265pBQ
+
+{
+    "title": "Task Numbe",
+    "description": "Description for Task number one"
+}
+
+###
+PUT http://localhost:8080/tasks/1 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqYXNvbi5ndWVycmEyNTNAZ21haWwuY29tIiwic2NvcGUiOiJVU0VSIiwiaXNzIjoiIiwiZXhwIjoxNzQyMTgxOTQ4LCJpYXQiOjE3NDIxNzgzNDgsInVzZXJuYW1lIjoiamFzb24uZ3VlcnJhMjUzQGdtYWlsLmNvbSJ9.LYYKXceMr6qZRiJE8FFKZDes72NkhmfX1zWMO6WmnMPdrTIvWdI89uw_hinvLZOP9C48YyHebqSY0EnFedTt84a-dPnuWz5Ye8Bdngs4tn5vT34VIZa3OVFgFAnv6DlAMiHVEBHP4tQrZMvyF8Gfs6l119-NOftHKCK1uDWTaTEHW86CGlX8X3N8Er5BF-ipBSyhuAWbVaFG8_zl59seRpxcEnU-DVEDe0lr2ZVQLmokoJDQS4pkRBNhTBl3HwmP-X4_UuVfgs2FuiQVTepU8tFqxB94Zl4RRPTQxD4qtDe4gNSqFXiPY4iHrGrUXw4nlzJxeyq1QW17skmP265pBQ
+
+{
+    "title": "Task Numbe",
+    "description": "Description for Task number one"
+}
+
+###
+DELETE http://localhost:8080/tasks HTTP/1.1
+Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqYXNvbi5ndWVycmEyNTNAZ21haWwuY29tIiwic2NvcGUiOiJVU0VSIiwiaXNzIjoiIiwiZXhwIjoxNzQyMTgxOTQ4LCJpYXQiOjE3NDIxNzgzNDgsInVzZXJuYW1lIjoiamFzb24uZ3VlcnJhMjUzQGdtYWlsLmNvbSJ9.LYYKXceMr6qZRiJE8FFKZDes72NkhmfX1zWMO6WmnMPdrTIvWdI89uw_hinvLZOP9C48YyHebqSY0EnFedTt84a-dPnuWz5Ye8Bdngs4tn5vT34VIZa3OVFgFAnv6DlAMiHVEBHP4tQrZMvyF8Gfs6l119-NOftHKCK1uDWTaTEHW86CGlX8X3N8Er5BF-ipBSyhuAWbVaFG8_zl59seRpxcEnU-DVEDe0lr2ZVQLmokoJDQS4pkRBNhTBl3HwmP-X4_UuVfgs2FuiQVTepU8tFqxB94Zl4RRPTQxD4qtDe4gNSqFXiPY4iHrGrUXw4nlzJxeyq1QW17skmP265pBQ
+
+
+###
+POST http://localhost:8080/auth/register
+Content-Type: application/json
+
+{
+    "name": "Jason Saul",
+    "password": "password",
+    "email": "jason.guerra253@gmail.com"
+}
+
+
+###
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+    "password": "password",
+    "username": "jason.guerra253@gmail.com"
+}
+
+
