@@ -14,7 +14,7 @@ export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
   if(token) { 
     newHeaders = newHeaders.set('Authorization', `Bearer ${token}`);
   }
-  const newRequest = req.clone({setHeaders: {Authorization: `Bearer ${token}`}});
+  const newRequest = req.clone({ headers: newHeaders });
   return next(newRequest)
     .pipe(catchError((error: HttpErrorResponse) => {
       if(error.status === 401) {
