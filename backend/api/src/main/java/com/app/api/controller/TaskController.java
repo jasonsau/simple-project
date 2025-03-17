@@ -26,7 +26,6 @@ public class TaskController extends Controller{
     private final IUserService iUserService;
 
     @GetMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
-    @CrossOrigin("*")
     public ResponseEntity<Page<Task>> getAllTasks(Authentication authentication) {
         User user = iUserService.findByEmail(authentication.getName());
         Specification<Task> taskSpecification = TaskSpecification.byUser(user);
@@ -36,7 +35,6 @@ public class TaskController extends Controller{
     }
 
     @PostMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    @CrossOrigin("*")
     public ResponseEntity<?> createTask(@Validated @RequestBody TaskDto taskDto, Authentication authentication) {
         try {
             taskDto.setCompleted(false);
