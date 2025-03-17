@@ -61,10 +61,10 @@ export class AddTaskComponentDialog {
   loading = signal(false);
   taskFormGroup = new FormGroup({
     title: new FormControl('', {
-      validators: [Validators.required],
+      validators: [Validators.required, Validators.maxLength(50)],
     }),
     description: new FormControl('',{
-      validators: [Validators.required]
+      validators: [Validators.required, Validators.maxLength(250)]
     }),
   });
   taskForm = {

@@ -5,17 +5,23 @@
 <mat-dialog-content>
         <mat-form-field style="width: 100%">
             <mat-label>Nombre de la tarea</mat-label>
-            <input matInput [formControl]="taskFormGroup.controls.title">
+            <input matInput [formControl]="taskFormGroup.controls.title" maxlength="50">
             @if(taskFormGroup.controls.title.hasError('required')) {
                 <mat-error>El titulo es requerido</mat-error>
+            }
+            @if(taskFormGroup.controls.title.hasError('maxlength')) {
+                <mat-error>El titulo debe tener al menos 50 caracteres</mat-error>
             }
         </mat-form-field>
 
         <mat-form-field style="width: 100%">
             <mat-label>Descripccion de la tarea</mat-label>
-            <textarea matInput [formControl]="taskFormGroup.controls.description"></textarea>
+            <textarea matInput [formControl]="taskFormGroup.controls.description" maxlength="250"></textarea>
             @if(taskFormGroup.controls.description.hasError('required')) {
                 <mat-error>La descripcion es requerido</mat-error>
+            }
+            @if(taskFormGroup.controls.description.hasError('maxlength')) {
+                <mat-error>La descripcion debe tener al menos 250 caracteres</mat-error>
             }
         </mat-form-field>
 
